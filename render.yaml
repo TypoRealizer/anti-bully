@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: anti-bully-backend
+    env: python
+    buildCommand: ""
+    startCommand: gunicorn app:app --worker-class eventlet -w 1 -b 0.0.0.0:10000
+    envVars:
+      - key: PORT
+        value: 10000
+    plan: free
+
